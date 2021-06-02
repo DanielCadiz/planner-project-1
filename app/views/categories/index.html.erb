@@ -1,0 +1,30 @@
+<% flash.each do |name,messages| %>
+    <ul>
+      <li><%= messages %></li>
+    </ul>
+  <% end %>
+  
+  <table>
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Body</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.id %></td>
+          <td><%= category.title %></td>
+          <td><%= category.description %></td>
+          <td><%= link_to 'Show', category_path(category) %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Delete', category_path(category), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <%= link_to 'New Item', new_category_path %>
