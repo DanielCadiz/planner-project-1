@@ -1,4 +1,4 @@
-<% flash.each do |name,messages| %>
+<% flash.each do |title,messages| %>
     <ul>
       <li><%= messages %></li>
     </ul>
@@ -8,8 +8,7 @@
     <thead>
       <tr>
           <th>ID</th>
-          <th>Name</th>
-          <th>Body</th>
+          <th>Title</th>
       </tr>
     </thead>
   
@@ -18,7 +17,7 @@
         <tr>
           <td><%= category.id %></td>
           <td><%= category.title %></td>
-          <td><%= category.description %></td>
+          #<td><%= category.description %></td>
           <td><%= link_to 'Show', category_path(category) %></td>
           <td><%= link_to 'Edit', edit_category_path(category) %></td>
           <td><%= link_to 'Delete', category_path(category), method: :delete, data: {confirm: "Are you sure?"} %></td>
